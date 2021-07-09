@@ -264,7 +264,7 @@ const MaterialAppBar = ({ history }) => {
             </IconButton>
           </a>
           <a href='/' style={{ color: '#ffffff', textDecoration: 'none' }}>
-            <Typography className={classes.title} variant='h6' noWrap>
+            <Typography className={classes.title} variant='h4' noWrap>
               RaceCityComics
             </Typography>
           </a>
