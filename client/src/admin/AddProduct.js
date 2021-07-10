@@ -94,7 +94,6 @@ const AddProduct = () => {
           <input
             onChange={handleChange('photo')}
             type='file'
-            
             name='photo'
             accept='image/*'
           />

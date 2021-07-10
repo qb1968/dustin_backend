@@ -8,6 +8,10 @@
   border-radius: 0px;
 }
 
+p{
+  font-size: 20px;
+}
+
 /* cart badge */
 
 .cart-badge,
@@ -146,7 +150,7 @@
   background-image: url('https://images4.alphacoders.com/108/108584.jpg');
 } */
 
-.pic{
+.pic1{
   display:block;
   margin-left: auto;
   margin-right: auto;
@@ -167,3 +171,113 @@
 
   }
 } */
+
+.Contact-form {
+  text-align: center;
+  padding-bottom: 8%;
+  background-color:#3f51b581;
+  width:75%;
+}
+
+.contact-form-header {
+  font-size: 2.5rem;
+  padding: 1%;
+  font-family: 'Raleway', sans-serif;
+  color: black;
+}
+
+.contact_input {
+  padding-left: 10%;
+  padding-right: 10%;
+}
+
+.contact_input_text {
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 1.5rem;
+  border-radius: 5%;
+  text-align: center;
+  background: transparent;
+  color: white;
+  min-height: 6.5vh;
+}
+
+.contact_success_modal_body {
+  text-align: center;
+  background: #090909;
+  color: aliceblue;
+}
+
+.contact_success_modal_img {
+  height: 15vh;
+  padding-bottom: 3%;
+}
+
+button.contact-email-text-btn:hover {
+  background: #3f51b5;
+  color: black;
+}
+
+.pic {
+ border: 1px solid #ddd;
+ border-radius: 6px;
+ padding: 5px;
+ width: 150px;
+ height:150px;
+ margin-left: auto;
+ margin-right: auto;
+}
+
+.pics{
+  display: flex;
+  flex-direction: row;
+  
+  
+}
+.pics2{
+  display: flex;
+  flex-direction: row;
+  
+   margin-bottom:15px;
+  
+}
+
+@media only screen and (max-width: 600px){
+  .pics {
+    display: flex;
+    flex-direction: column;
+}
+  .pics2 {
+    display: flex;
+    flex-direction: column;
+
+    margin-bottom: 15px;
+}
+  
+}
+
+.press{
+  display:flex;
+  flex-direction: column;
+  align-items:center;
+  text-align: center;
+}
+
+.button{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.address{
+ margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.contact{
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+}
