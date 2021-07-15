@@ -14,11 +14,13 @@ const AddProduct = () => {
     shipping: '',
     quantity: '',
     photo: '',
+    photo2:'',
     loading: false,
     error: '',
     createdProduct: '',
     redirectToProfile: false,
     formData: '',
+  
   });
 
   const { user, token } = isAuthenticated();
@@ -32,11 +34,13 @@ const AddProduct = () => {
     shipping,
     quantity,
     photo,
+    photo2,
     loading,
     error,
     createdProduct,
     redirectToProfile,
     formData,
+    
   } = values;
 
   // load categories and set form data
@@ -63,6 +67,11 @@ const AddProduct = () => {
     formData.set(name, value);
     setValues({ ...values, [name]: value });
   };
+  const handleChange2 = (name) => (event) => {
+    const value = name === 'photo2' ? event.target.files[0] : event.target.value;
+    formData.set(name, value);
+    setValues({ ...values, [name]: value });
+  };
 
   const clickSubmit = (event) => {
     event.preventDefault();
@@ -77,6 +86,7 @@ const AddProduct = () => {
           name: '',
           description: '',
           photo: '',
+          photo2: '',
           price: '',
           quantity: '',
           loading: false,
@@ -87,51 +97,52 @@ const AddProduct = () => {
   };
 
   const newPostForm = () => (
-    <form className='mb-3' onSubmit={clickSubmit}>
+    <form className="mb-3" onSubmit={clickSubmit}>
       <h4>Front Photo</h4>
-      <div className='form-group'>
-        <label className='btn btn-secondary'>
+      <div className="form-group">
+        <label className="btn btn-secondary">
           <input
-            onChange={handleChange('photo')}
-            type='file'
-            name='photo'
-            accept='image/*'
+            onChange={handleChange("photo")}
+            type="file"
+            multiple={true}
+            name="photo"
+            accept="image/*"
           />
         </label>
       </div>
 
-      <div className='form-group'>
-        <label className='text-muted'>Name</label>
+      <div className="form-group">
+        <label className="text-muted">Name</label>
         <input
-          onChange={handleChange('name')}
-          type='text'
-          className='form-control'
+          onChange={handleChange("name")}
+          type="text"
+          className="form-control"
           value={name}
         />
       </div>
 
-      <div className='form-group'>
-        <label className='text-muted'>Description</label>
+      <div className="form-group">
+        <label className="text-muted">Description</label>
         <textarea
-          onChange={handleChange('description')}
-          className='form-control'
+          onChange={handleChange("description")}
+          className="form-control"
           value={description}
         />
       </div>
 
-      <div className='form-group'>
-        <label className='text-muted'>Price</label>
+      <div className="form-group">
+        <label className="text-muted">Price</label>
         <input
-          onChange={handleChange('price')}
-          type='number'
-          className='form-control'
+          onChange={handleChange("price")}
+          type="number"
+          className="form-control"
           value={price}
         />
       </div>
 
-      <div className='form-group'>
-        <label className='text-muted'>Category</label>
-        <select onChange={handleChange('category')} className='form-control'>
+      <div className="form-group">
+        <label className="text-muted">Category</label>
+        <select onChange={handleChange("category")} className="form-control">
           <option>Please select</option>
           {categories &&
             categories.map((c, i) => (
@@ -142,26 +153,27 @@ const AddProduct = () => {
         </select>
       </div>
 
-      <div className='form-group'>
-        <label className='text-muted'>Shipping</label>
-        <select onChange={handleChange('shipping')} className='form-control'>
+      <div className="form-group">
+        <label className="text-muted">Shipping</label>
+        <select onChange={handleChange("shipping")} className="form-control">
           <option>Please select</option>
-          <option value='0'>No</option>
-          <option value='1'>Yes</option>
+          <option value="0">No</option>
+          <option value="1">Yes</option>
+          <input onChange={handleChange("price")} value={price} type="number" />
         </select>
       </div>
 
-      <div className='form-group'>
-        <label className='text-muted'>Quantity</label>
+      <div className="form-group">
+        <label className="text-muted">Quantity</label>
         <input
-          onChange={handleChange('quantity')}
-          type='number'
-          className='form-control'
+          onChange={handleChange("quantity")}
+          type="number"
+          className="form-control"
           value={quantity}
         />
       </div>
 
-      <button className='btn btn-outline-primary'>Create Product</button>
+      <button className="btn btn-outline-primary">Create Product</button>
     </form>
   );
 

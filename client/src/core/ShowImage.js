@@ -9,6 +9,12 @@ const ShowImage = ({ item, url }) => (
       className='mb-3'
       style={{ objectFit: 'contain', height: '100%', width: '100%', display: 'flex', marginLeft: 'auto', marginRight: 'auto' }}
     />
+    {/* <img
+      src={`${API}/${url}/photo2/${item._id}`}
+      
+      className='mb-3'
+      style={{ objectFit: 'contain', height: '100%', width: '100%', display: 'flex', marginLeft: 'auto', marginRight: 'auto' }}
+    /> */}
   </div>
 );
 

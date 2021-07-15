@@ -25,6 +25,7 @@ exports.read = (req, res) => {
 
 exports.create = (req, res) => {
   let form = new formidable.IncomingForm();
+  form.multiples = true;
   form.keepExtensions = true;
   form.parse(req, (err, fields, files) => {
     if (err) {
@@ -54,15 +55,16 @@ exports.create = (req, res) => {
     // 1mb = 1000000
 
     if (files.photo) {
-      // console.log("FILES PHOTO: ", files.photo);
-      if (files.photo.size > 3000000) {
+     console.log("FILES PHOTO: ", files.photo);
+      if (files.photo.size > 50000000) {
         return res.status(400).json({
-          error: 'Image should be less than 1mb in size',
+          error: 'Image should be less than 10mb in size',
         });
       }
       product.photo.data = fs.readFileSync(files.photo.path);
       product.photo.contentType = files.photo.type;
     }
+   
 
     product.save((err, result) => {
       if (err) {
@@ -108,9 +110,9 @@ exports.update = (req, res) => {
 
     if (files.photo) {
       // console.log("FILES PHOTO: ", files.photo);
-      if (files.photo.size > 3000000) {
+      if (files.photo.size > 50000000) {
         return res.status(400).json({
-          error: 'Image should be less than 3mb in size',
+          error: "Image should be less than 10mb in size",
         });
       }
       product.photo.data = fs.readFileSync(files.photo.path);

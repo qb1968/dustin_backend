@@ -17,8 +17,8 @@ import Pic7 from '../images/back8 (2).png';
 import Pic8 from '../images/back9.png';
 import Pic9 from '../images/b10 (2).png';
 import Pic10 from '../images/b11.png';
-import Pic11 from '../images/bm12 (2).png';
-import Pic12 from '../images/bm13 (2).png';
+import Pic11 from '../images/new1 (2).jpg';
+import Pic12 from '../images/new2 (2).jpg';
 import Pic13 from '../images/side14 (2).png';
 import Pic14 from '../images/side15 (2).png';
 import Pdf from '../images/comics.pdf'

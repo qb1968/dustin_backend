@@ -33,13 +33,23 @@ const productSchema = new mongoose.Schema(
       default: 0,
     },
     photo: {
-      data: Buffer,
-      contentType: String,
+     
+        
+          data: Buffer,
+          contentType: String,
+        
+      
+      
+      
+      
+      
     },
+    
     
     shipping: {
       required: false,
       type: Boolean,
+      price: Number,
     },
   },
   { timestamps: true }
