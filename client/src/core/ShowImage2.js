@@ -1,10 +1,10 @@
 import React from 'react';
 import { API } from '../config';
 
- const ShowImage = ({ item, url }) => {
+ const ShowImage2 = ({ item, url }) => {
    return (
   <div className="product-img" style={{ height: "250px" }}>
-    <img
+    {/* <img
       src={`${API}/${url}/photo/${item._id}`}
       alt={item.name}
       className="mb-3"
@@ -17,9 +17,9 @@ import { API } from '../config';
         marginLeft: "auto",
         marginRight: "auto",
       }}
-      />
+      /> */}
       
-    {/* <img
+    <img
       src={`${API}/${url}/photo2/${item._id}`}
       className="mb-3"
       style={{
@@ -31,13 +31,13 @@ import { API } from '../config';
         marginLeft: "auto",
         marginRight: "auto",
       }}
-    /> */}
+    />
     </div>
     
     
 )
     }
-export default ShowImage
+export default ShowImage2
     
 
 

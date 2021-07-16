@@ -72,6 +72,7 @@ const AddProduct = () => {
     formData.set(name, value);
     setValues({ ...values, [name]: value });
   };
+  
 
   const clickSubmit = (event) => {
     event.preventDefault();
@@ -102,11 +103,27 @@ const AddProduct = () => {
       <div className="form-group">
         <label className="btn btn-secondary">
           <input
-            onChange={handleChange("photo")}
+           
             type="file"
-            multiple={true}
+            
             name="photo"
             accept="image/*"
+            
+             onChange={handleChange("photo")}
+          />
+        </label>
+      </div>
+      <h4>Back Photo</h4>
+      <div className="form-group">
+        <label className="btn btn-secondary">
+          <input
+           
+            type="file"
+            
+            name="photo2"
+            accept="image/*"
+            
+             onChange={handleChange2("photo2")}
           />
         </label>
       </div>

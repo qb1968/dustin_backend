@@ -33,16 +33,12 @@ const productSchema = new mongoose.Schema(
       default: 0,
     },
     photo: {
-     
-        
           data: Buffer,
           contentType: String,
-        
-      
-      
-      
-      
-      
+    },
+    photo2: {
+          data: Buffer,
+          contentType: String,
     },
     
     
