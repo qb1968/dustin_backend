@@ -194,7 +194,7 @@ const Card = ({
           <CardM className={classes.card}>
             {shouldRedirect(redirect)}
             <ShowImage item={product} url='product' />
-            <ShowImage2 item={product} url='product' />
+            {/* <ShowImage2 item={product} url='product' /> */}
             <CardContent className={classes.cardContent}>
               <Typography gutterBottom variant='h5' component='h2'>
                 {product.name}
