@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Redirect } from 'react-router-dom';
 import ShowImage from './ShowImage';
+import ShowImage2 from './ShowImage2'
 import moment from 'moment';
 
 import AppBar from '@material-ui/core/AppBar';
@@ -193,6 +194,7 @@ const Card = ({
           <CardM className={classes.card}>
             {shouldRedirect(redirect)}
             <ShowImage item={product} url='product' />
+            {/* <ShowImage2 item={product} url='product' /> */}
             <CardContent className={classes.cardContent}>
               <Typography gutterBottom variant='h5' component='h2'>
                 {product.name}

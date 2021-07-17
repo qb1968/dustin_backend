@@ -20,6 +20,7 @@ exports.productById = (req, res, next, id) => {
 
 exports.read = (req, res) => {
   req.product.photo = undefined;
+  req.product.image = undefined;
   return res.json(req.product);
 };
 
@@ -63,6 +64,16 @@ exports.create = (req, res) => {
       }
       product.photo.data = fs.readFileSync(files.photo.path);
       product.photo.contentType = files.photo.type;
+    }
+    if (files.image) {
+     console.log("FILES IMAGE: ", files.image);
+      if (files.image.size > 50000000) {
+        return res.status(400).json({
+          error: 'Image should be less than 10mb in size',
+        });
+      }
+      product.image.data = fs.readFileSync(files.image.path);
+      product.image.contentType = files.image.type;
     }
    
 
@@ -118,6 +129,16 @@ exports.update = (req, res) => {
       product.photo.data = fs.readFileSync(files.photo.path);
       product.photo.contentType = files.photo.type;
     }
+     if (files.image) {
+     console.log("FILES IMAGE: ", files.image);
+      if (files.image.size > 50000000) {
+        return res.status(400).json({
+          error: 'Image should be less than 10mb in size',
+        });
+      }
+      product.image.data = fs.readFileSync(files.image.path);
+      product.image.contentType = files.image.type;
+    }
 
     product.save((err, result) => {
       if (err) {
@@ -143,7 +164,7 @@ exports.list = (req, res) => {
   let limit = req.query.limit ? parseInt(req.query.limit) : 6;
 
   Product.find()
-    .select('-photo')
+    .select('-photo','-image')
     .populate('category')
     .sort([[sortBy, order]])
     .limit(limit)
@@ -223,7 +244,7 @@ exports.listBySearch = (req, res) => {
   }
 
   Product.find(findArgs)
-    .select('-photo')
+    .select('-photo','-image')
     .populate('category')
     .sort([[sortBy, order]])
     .skip(skip)
@@ -248,6 +269,13 @@ exports.photo = (req, res, next) => {
   }
   next();
 };
+exports.image = (req, res, next) => {
+  if (req.product.image.data) {
+    res.set('Content-Type', req.product.image.contentType);
+    return res.send(req.product.image.data);
+  }
+  next();
+};
 
 exports.listSearch = (req, res) => {
   // create query object to hold search value and category value
@@ -268,7 +296,8 @@ exports.listSearch = (req, res) => {
         });
       }
       res.json(products);
-    }).select('-photo');
+    }).select('-photo','-image');
+
   }
 };
 

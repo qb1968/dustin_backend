@@ -14,6 +14,7 @@ const UpdateProduct = ({ match }) => {
     shipping: '',
     quantity: '',
     photo: '',
+    image: '',
     loading: false,
     error: false,
     createdProduct: '',
@@ -80,6 +81,11 @@ const UpdateProduct = ({ match }) => {
     formData.set(name, value);
     setValues({ ...values, [name]: value });
   };
+  const handleChange2 = (name) => (event) => {
+    const value = name === 'image' ? event.target.files[0] : event.target.value;
+    formData.set(name, value);
+    setValues({ ...values, [name]: value });
+  };
 
   const clickSubmit = (event) => {
     event.preventDefault();
@@ -95,6 +101,7 @@ const UpdateProduct = ({ match }) => {
             name: '',
             description: '',
             photo: '',
+            image: '',
             price: '',
             quantity: '',
             loading: false,
@@ -116,11 +123,23 @@ const UpdateProduct = ({ match }) => {
             onChange={handleChange('photo')}
             type='file'
             name='photo'
-            multiple={true}
+            
             accept='image/*'
           />
         </label>
       </div>
+      {/* <h4>Post Photo</h4>
+      <div className='form-group'>
+        <label className='btn btn-secondary'>
+          <input
+            onChange={handleChange2('image')}
+            type='file'
+            name='image'
+            
+            accept='image/*'
+          />
+        </label>
+      </div> */}
 
       <div className='form-group'>
         <label className='text-muted'>Name</label>

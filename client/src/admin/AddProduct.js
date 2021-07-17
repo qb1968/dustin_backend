@@ -14,7 +14,7 @@ const AddProduct = () => {
     shipping: '',
     quantity: '',
     photo: '',
-    photo2:'',
+    image:'',
     loading: false,
     error: '',
     createdProduct: '',
@@ -34,7 +34,7 @@ const AddProduct = () => {
     shipping,
     quantity,
     photo,
-    photo2,
+    image,
     loading,
     error,
     createdProduct,
@@ -68,7 +68,7 @@ const AddProduct = () => {
     setValues({ ...values, [name]: value });
   };
   const handleChange2 = (name) => (event) => {
-    const value = name === 'photo2' ? event.target.files[0] : event.target.value;
+    const value = name === 'image' ? event.target.files[0] : event.target.value;
     formData.set(name, value);
     setValues({ ...values, [name]: value });
   };
@@ -86,7 +86,7 @@ const AddProduct = () => {
           name: '',
           description: '',
           photo: '',
-          photo2: '',
+          image: '',
           price: '',
           quantity: '',
           loading: false,
@@ -104,12 +104,24 @@ const AddProduct = () => {
           <input
             onChange={handleChange("photo")}
             type="file"
-            multiple={true}
+            
             name="photo"
             accept="image/*"
           />
         </label>
       </div>
+      {/* <h4>Rear Photo</h4>
+      <div className="form-group">
+        <label className="btn btn-secondary">
+          <input
+            onChange={handleChange2("image")}
+            type="file"
+            
+            name="image"
+            accept="image/*"
+          />
+        </label>
+      </div> */}
 
       <div className="form-group">
         <label className="text-muted">Name</label>
