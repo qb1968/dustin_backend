@@ -12,7 +12,7 @@ const {
   listCategories,
   listBySearch,
   photo,
-  image,
+  // image,
   listSearch
 } = require('../controllers/product');
 const { requireSignin, isAuth, isAdmin } = require('../controllers/auth');
@@ -42,7 +42,7 @@ router.get('/products/related/:productId', listRelated);
 router.get('/products/categories', listCategories);
 router.post('/products/by/search', listBySearch);
 router.get('/product/photo/:productId', photo);
-router.get('/product/image/:productId', image);
+// router.get('/product/image/:productId', image);
 
 router.param('userId', userById);
 router.param('productId', productById);

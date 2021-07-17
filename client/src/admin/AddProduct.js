@@ -14,7 +14,7 @@ const AddProduct = () => {
     shipping: '',
     quantity: '',
     photo: '',
-    image:'',
+    // image:'',
     loading: false,
     error: '',
     createdProduct: '',
@@ -34,7 +34,7 @@ const AddProduct = () => {
     shipping,
     quantity,
     photo,
-    image,
+    // image,
     loading,
     error,
     createdProduct,
@@ -67,11 +67,11 @@ const AddProduct = () => {
     formData.set(name, value);
     setValues({ ...values, [name]: value });
   };
-  const handleChange2 = (name) => (event) => {
-    const value = name === 'image' ? event.target.files[0] : event.target.value;
-    formData.set(name, value);
-    setValues({ ...values, [name]: value });
-  };
+  // const handleChange2 = (name) => (event) => {
+  //   const value = name === 'image' ? event.target.files[0] : event.target.value;
+  //   formData.set(name, value);
+  //   setValues({ ...values, [name]: value });
+  // };
 
   const clickSubmit = (event) => {
     event.preventDefault();
@@ -86,7 +86,7 @@ const AddProduct = () => {
           name: '',
           description: '',
           photo: '',
-          image: '',
+          // image: '',
           price: '',
           quantity: '',
           loading: false,

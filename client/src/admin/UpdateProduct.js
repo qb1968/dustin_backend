@@ -14,7 +14,7 @@ const UpdateProduct = ({ match }) => {
     shipping: '',
     quantity: '',
     photo: '',
-    image: '',
+    // image: '',
     loading: false,
     error: false,
     createdProduct: '',
@@ -81,11 +81,11 @@ const UpdateProduct = ({ match }) => {
     formData.set(name, value);
     setValues({ ...values, [name]: value });
   };
-  const handleChange2 = (name) => (event) => {
-    const value = name === 'image' ? event.target.files[0] : event.target.value;
-    formData.set(name, value);
-    setValues({ ...values, [name]: value });
-  };
+  // const handleChange2 = (name) => (event) => {
+  //   const value = name === 'image' ? event.target.files[0] : event.target.value;
+  //   formData.set(name, value);
+  //   setValues({ ...values, [name]: value });
+  // };
 
   const clickSubmit = (event) => {
     event.preventDefault();
@@ -101,7 +101,7 @@ const UpdateProduct = ({ match }) => {
             name: '',
             description: '',
             photo: '',
-            image: '',
+            // image: '',
             price: '',
             quantity: '',
             loading: false,
