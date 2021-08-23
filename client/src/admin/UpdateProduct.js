@@ -13,8 +13,8 @@ const UpdateProduct = ({ match }) => {
     category: '',
     shipping: '',
     quantity: '',
-    photo: '',
-    // image: '',
+   photo: '',
+    image: '',
     loading: false,
     error: false,
     createdProduct: '',
@@ -81,11 +81,11 @@ const UpdateProduct = ({ match }) => {
     formData.set(name, value);
     setValues({ ...values, [name]: value });
   };
-  // const handleChange2 = (name) => (event) => {
-  //   const value = name === 'image' ? event.target.files[0] : event.target.value;
-  //   formData.set(name, value);
-  //   setValues({ ...values, [name]: value });
-  // };
+  const handleChange2 = (name) => (event) => {
+    const value = name === 'image' ? event.target.files[0] : event.target.value;
+    formData.set(name, value);
+    setValues({ ...values, [name]: value });
+  };
 
   const clickSubmit = (event) => {
     event.preventDefault();
@@ -100,8 +100,8 @@ const UpdateProduct = ({ match }) => {
             ...values,
             name: '',
             description: '',
-            photo: '',
-            // image: '',
+           photo: '',
+            image: '',
             price: '',
             quantity: '',
             loading: false,
@@ -116,7 +116,7 @@ const UpdateProduct = ({ match }) => {
 
   const newPostForm = () => (
     <form className='mb-3' onSubmit={clickSubmit}>
-      <h4>Post Photo</h4>
+      <h4>Front Photo</h4>
       <div className='form-group'>
         <label className='btn btn-secondary'>
           <input
@@ -128,7 +128,7 @@ const UpdateProduct = ({ match }) => {
           />
         </label>
       </div>
-      {/* <h4>Post Photo</h4>
+      <h4>Rear Photo</h4>
       <div className='form-group'>
         <label className='btn btn-secondary'>
           <input
@@ -139,7 +139,7 @@ const UpdateProduct = ({ match }) => {
             accept='image/*'
           />
         </label>
-      </div> */}
+      </div>
 
       <div className='form-group'>
         <label className='text-muted'>Name</label>

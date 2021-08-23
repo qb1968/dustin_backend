@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import CheckboxM from '@material-ui/core/Checkbox';
+import React, { useState } from "react";
+import CheckboxM from "@material-ui/core/Checkbox";
 
 const Checkbox = ({ categories, handleFilters }) => {
   const [checked, setCheked] = useState([]);
@@ -21,12 +21,12 @@ const Checkbox = ({ categories, handleFilters }) => {
   };
 
   return categories.map((c, i) => (
-    <li key={i} className='list-unstyled'>
+    <li key={i} className="list-unstyled">
       <CheckboxM
         onChange={handleToggle(c._id)}
         value={checked.indexOf(c._id === -1)}
       />
-      <label className='form-check-label'>{c.name}</label>
+      <label className="form-check-label">{c.name}</label>
     </li>
   ));
 };

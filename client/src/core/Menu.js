@@ -3,7 +3,7 @@ import { Link, withRouter, forceUpdate } from 'react-router-dom';
 import { signout, isAuthenticated } from '../auth';
 import { itemTotal } from './cartHelpers';
 
-import { fade, makeStyles } from '@material-ui/core/styles';
+import { alpha, makeStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import IconButton from '@material-ui/core/IconButton';
@@ -48,9 +48,9 @@ const useStyles = makeStyles((theme) => ({
   search: {
     position: 'relative',
     borderRadius: theme.shape.borderRadius,
-    backgroundColor: fade(theme.palette.common.white, 0.15),
+    backgroundColor: alpha(theme.palette.common.white, 0.15),
     '&:hover': {
-      backgroundColor: fade(theme.palette.common.white, 0.25),
+      backgroundColor: alpha(theme.palette.common.white, 0.25),
     },
     marginRight: theme.spacing(2),
     marginLeft: 0,
@@ -158,14 +158,14 @@ const MaterialAppBar = ({ history }) => {
           </Link>
         </MenuItem>
 
-        <MenuItem>
+        {/* <MenuItem>
           <Link style={isActive(history, '/shop')} to='/shop'>
             <IconButton aria-label='Shop' color='inherit'>
               <StorefrontIcon />
             </IconButton>
             Shop
           </Link>
-        </MenuItem>
+        </MenuItem> */}
 
         <MenuItem>
           <Link style={isActive(history, '/cart')} to='/cart'>
@@ -278,12 +278,12 @@ const MaterialAppBar = ({ history }) => {
               </IconButton>
             </Link>
 
-            <Link style={isActive(history, '/shop')} to='/shop'>
+            {/* <Link style={isActive(history, '/shop')} to='/shop'>
               <IconButton aria-label='Shop' color='inherit'>
                 <StorefrontIcon />
                 <Typography noWrap>Shop</Typography>
               </IconButton>
-            </Link>
+            </Link> */}
 
             <Link style={isActive(history, '/cart')} to='/cart'>
               <IconButton aria-label='Cart' color='inherit'>

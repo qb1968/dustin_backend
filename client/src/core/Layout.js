@@ -1,11 +1,10 @@
 import React from 'react';
 import Menu from './Menu';
 import '../styles.css';
-import Pic from '../images/Dustin.jpg'
+import Pic from '../images/NewDustin2.jpg'
 
 const Layout = ({
   title = "Title",
-  description = "Description",
   className,
   children,
 }) => (

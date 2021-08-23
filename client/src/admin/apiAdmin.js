@@ -26,6 +26,7 @@ export const createProduct = (userId, token, product) => {
       Authorization: `Bearer ${token}`,
     },
     body: product,
+    
   })
     .then((response) => {
       return response.json();
@@ -132,7 +133,7 @@ export const getProduct = (productId) => {
     .catch((err) => console.log(err));
 };
 
-export const updateProduct = (productId, userId, token, product) => {
+export const updateProduct = (productId, userId, token, product,photo,image) => {
   return fetch(`${API}/product/${productId}/${userId}`, {
     method: 'PUT',
     headers: {
@@ -140,6 +141,7 @@ export const updateProduct = (productId, userId, token, product) => {
       Authorization: `Bearer ${token}`,
     },
     body: product,
+   
   })
     .then((response) => {
       return response.json();
