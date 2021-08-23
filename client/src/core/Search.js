@@ -70,7 +70,7 @@ const Search = () => {
   const searchedProducts = (results = []) => {
     return (
       <div className="container-fluid">
-        <h2 className="mt-4 bm-4">{searchMessage(searched, results)}</h2>
+        <h2 className="mt-5 bm-5">{searchMessage(searched, results)}</h2>
         <div  className="row">
           {results.map((p, i) => (
             <div  className="col-sm-4">
@@ -87,8 +87,8 @@ const Search = () => {
       <form onSubmit={searchSubmit}>
         <span className="input-group-text">
           <div className="input-group input-group-lg">
-            <div className="input-group-prepend">
-              <select className="btn mr-2" onChange={handleChange("category")}>
+            {/* <div className="input-group-prepend">
+              <select className="btn mr-1" onChange={handleChange("category")}>
                 <option value="All">All</option>
                 {categories.map((c, i) => (
                   <option key={i} value={c._id}>
@@ -96,7 +96,7 @@ const Search = () => {
                   </option>
                 ))}
               </select>
-            </div>
+            </div> */}
             <input
               type="search"
               className="form-control"
@@ -114,7 +114,7 @@ const Search = () => {
 
   return (
     <div className="row">
-      <div className="container-fluid mb-3">{searchForm()}</div>
+      <div className="container-fluid mb-4">{searchForm()}</div>
       <div className="container-fluid ">{searchedProducts(results)}</div>
     </div>
   );

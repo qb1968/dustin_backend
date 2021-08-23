@@ -396,7 +396,7 @@ button.contact-email-text-btn:hover {
 
 .nav-main{
   display:flex;
- 
+ margin-bottom: 20px;
   justify-content:center; 
   padding: 10px;
   width:100%;
@@ -429,6 +429,7 @@ button.contact-email-text-btn:hover {
 
   justify-content: center;
   padding: 10px;
+  
 }
 
 
@@ -438,7 +439,7 @@ button.contact-email-text-btn:hover {
     justify-content:center;
     border: 2px solid #000;
     background-color: #3f51b5;
-    margin: 0 auto 0;
+    margin: 0 auto 0 ;
     width:115px;
     margin-bottom:5px;
   } 
