@@ -11,7 +11,7 @@ import Navigation from './Nav';
 
 
 
-import SingleSource from './SingleSource';
+import SingleSource1 from './SingleSource1';
 // import Pic from '../images/sw1 (2).png';
 // import Pic2 from '../images/sw2 (2).png';
 // import Pic3 from '../images/corner3 (2).png';
@@ -117,7 +117,7 @@ const Home = () => {
       </div>
       <div className="pics">
         {images.map((image) => (
-          <SingleSource key={image} src={image} />
+          <SingleSource1  key={image} src={image} />
         ))}
       </div>
       {/* <div className="pics">

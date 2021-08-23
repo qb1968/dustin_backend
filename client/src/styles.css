@@ -246,11 +246,14 @@ button.contact-email-text-btn:hover {
 .pics{
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  
   margin: 60px;
   
   
+  
 }
+
+
 
 @media only screen and (max-width: 600px){
   .pics {
