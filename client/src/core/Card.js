@@ -194,7 +194,7 @@ const Card = ({
     <Container className={classes.cardGrid} maxWidth="lg">
       <CssBaseline />
       <Grid container spacing={3}>
-        <Grid item xs={13} sm={13} md={13}>
+        <Grid item xs={12} sm={12} md={12}>
           <CardM className={classes.card}>
             <Typography className={classes.productHeader} gutterBottom variant="h6" component="h2">
                 {product.name}
