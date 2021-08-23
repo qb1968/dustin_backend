@@ -57,7 +57,7 @@ const useStyles = makeStyles((theme) => ({
   },
   productHeader: {
     textAlign: 'center',
-    backgroundColor:'#3f51b5',
+    backgroundColor:'White',
   }
 }));
 
@@ -196,7 +196,7 @@ const Card = ({
       <Grid container spacing={3}>
         <Grid item xs={12} sm={12} md={12}>
           <CardM className={classes.card}>
-            <Typography className={classes.productHeader} gutterBottom variant="h6" component="h2">
+            <Typography className={classes.productHeader} gutterBottom variant="h5" component="h2">
                 {product.name}
               </Typography>
             {shouldRedirect(redirect)}

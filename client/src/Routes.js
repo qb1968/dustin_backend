@@ -23,7 +23,7 @@ import Statues from './core/Statues';
 import SportsCards from './core/SportsCards';
 import PedalCars from './core/PedalCars';
 import VintageAd from './core/VintageAd';
-import Sample from './core/sample';
+
 
 const Routes = () => {
   return (

@@ -61,7 +61,7 @@ export const getFilteredProducts1 = (skip, limit, filters = {}) => {
   const data = {
     limit,
     skip,
-    filters: { category: ["60e5a122a15ee5492460861b"], price: [] },
+    filters: { category: ["60e5a122a15ee5492460861b"], price: []},
   };
   return fetch(`${API}/products/by/search`, {
     method: "POST",

@@ -30,11 +30,11 @@ const Navigation = () => {
             Sports Cards
           </Nav.Link>
         </Nav.Item>
-        <Nav.Item className="main-li">
+        {/* <Nav.Item className="main-li">
           <Nav.Link className="main-a" href="/pedalcars">
             Pedal Cars
           </Nav.Link>
-        </Nav.Item>
+        </Nav.Item> */}
         <Nav.Item className="main-li">
           <Nav.Link className="main-a" href="/vintagead">
             Vintage Advertising

@@ -13,6 +13,7 @@ const RadioBox = ({ prices, handleFilters }) => {
     <div className='ml-5' key={i}>
       <Radio
         checked={value === `${p._id}`}
+        
         onChange={handleChange}
         value={`${p._id}`}
         name={p}
