@@ -7,6 +7,7 @@ const cors = require('cors');
 const path = require('path');
 const expressValidator = require('express-validator');
 require('dotenv').config();
+const algoliasearch = require('algoliasearch');
 // import routes
 const authRoutes = require('./routes/auth');
 const userRoutes = require('./routes/user');
@@ -17,6 +18,13 @@ const orderRoutes = require('./routes/order');
 
 // app
 const app = express();
+// const client = algoliasearch("02UH7F203W", "7742809a339a00e8d355b56bfaed9daa");
+// const fetchDataFromDatabase = () => {
+//   const actors = // Fetch data from your database
+//   return actors;
+// }
+
+// const records = fetchDataFromDatabase();
 
 // db connection
 const connectDB = async () => {
@@ -53,6 +61,8 @@ app.use('/api', categoryRoutes);
 app.use('/api', productRoutes);
 app.use('/api', braintreeRoutes);
 app.use('/api', orderRoutes);
+
+
 
 // Server static assets if in production
 if (process.env.NODE_ENV === 'production') {

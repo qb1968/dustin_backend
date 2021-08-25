@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Layout from './Layout';
-
+import { Route } from "react-router-dom";
 import Card from './Card';
 import {
   getCategories,
@@ -164,11 +164,9 @@ const Shop = () => {
       className="container-fluid"
     >
       <Navigation />
-      <Search />
+      <Route render={({ history }) => <Search history={history} />}/>
       <div className="row">
         <div className="col-md-2">
-          
-
           {/* <h4>Filter by price range</h4>
           <div>
             <RadioBox
